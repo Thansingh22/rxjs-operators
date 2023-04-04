@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+.left-menu li{
+    background-color: blue;
+    list-style-type: none;
+    padding: 10px;
+    cursor: pointer;   
+    margin:10px 0px;
+}
+.left-menu a{
+    color: white;
+    text-decoration: none;
+}
+.border{
+    padding:30px;
+}
