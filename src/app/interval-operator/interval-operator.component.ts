@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { interval } from 'rxjs';
-import { DataService } from '../data.service';
+import { DataUtilityService } from '../services/data-utility.service';
 
 @Component({
   selector: 'app-interval-operator',
@@ -8,11 +8,17 @@ import { DataService } from '../data.service';
   styleUrls: ['./interval-operator.component.css']
 })
 export class IntervalOperatorComponent {
-  constructor(private _apiService : DataService){}
+  items:any;
+  constructor(private _apiService : DataUtilityService){}
   ngOnInit() {
    const pollInterval = interval(2000);
-   pollInterval.subscribe(()=>{
-      this._apiService.msgData();
-   });
+   const subscription = pollInterval.subscribe(()=>{
+      this._apiService.getUsers().subscribe((response)=>{
+        this.items = response;  
+        if(response.id==10){
+          subscription.unsubscribe();
+        }   
+    })  
+   });  
   }
 }

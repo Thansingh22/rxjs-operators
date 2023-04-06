@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { filter, from, pluck } from 'rxjs';
-import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-from-event',

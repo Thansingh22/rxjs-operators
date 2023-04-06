@@ -7,8 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { ObservableComponent } from './observable/observable.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FromEventComponent } from './from-event/from-event.component';
+import { DataUtilityService } from './services/data-utility.service';
 import { IntervalOperatorComponent } from './interval-operator/interval-operator.component';
-import { OfOperatorComponent } from './of-operator/of-operator.component'
+import { OfOperatorComponent } from './of-operator/of-operator.component';
 
 
 @NgModule({
@@ -18,15 +19,14 @@ import { OfOperatorComponent } from './of-operator/of-operator.component'
     ObservableComponent,
     FromEventComponent,
     IntervalOperatorComponent,
-    OfOperatorComponent,
-   
+    OfOperatorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DataUtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

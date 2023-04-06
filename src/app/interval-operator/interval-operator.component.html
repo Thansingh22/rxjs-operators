@@ -1,1 +1,20 @@
-<p>interval-operator works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+       
+        <ng-container *ngFor="let item of items">
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.username}}</td>
+                <td>c{{item.email}}</td>
+            </tr>
+        </ng-container>            
+      
+    </tbody>
+  </table>

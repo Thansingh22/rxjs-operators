@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataUtilityService {
+  apiUrl:string = 'https://jsonplaceholder.typicode.com/users';
+
   constructor(private _client : HttpClient) { }
 
   printList(val:any, containerID:any){
@@ -13,8 +16,9 @@ export class DataService {
     document.getElementById(containerID)?.appendChild(element);
   }
 
-  msgData(){
-    console.log("Hello Api Call Every 5sec");    
+  getUsers(): Observable<any>{
+    return this._client.get<any>(this.apiUrl);
   }
-
 }
+
+
